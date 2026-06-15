@@ -1,0 +1,52 @@
+\doxysection{Config\+Reader Class Reference}
+\hypertarget{class_config_reader}{}\label{class_config_reader}\index{ConfigReader@{ConfigReader}}
+
+
+Parsuje plik INI i zwraca strukturę \doxylink{struct_app_config}{App\+Config}.  
+
+
+
+
+{\ttfamily \+\#include $<$Config\+Reader.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{struct_app_config}{App\+Config}} \doxymbox{\hyperlink{class_config_reader_a08ee96719942b2eaa317c161bcb46dca}{read}} (const std::\+string \&ini\+Path)
+\begin{DoxyCompactList}\small\item\em wczytuje plik ini \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Parsuje plik INI i zwraca strukturę \doxylink{struct_app_config}{App\+Config}. 
+
+\label{class_config_reader_doc-func-members}
+\Hypertarget{class_config_reader_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_config_reader_a08ee96719942b2eaa317c161bcb46dca}\index{ConfigReader@{ConfigReader}!read@{read}}
+\index{read@{read}!ConfigReader@{ConfigReader}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \label{class_config_reader_a08ee96719942b2eaa317c161bcb46dca} 
+\doxymbox{\hyperlink{struct_app_config}{App\+Config}} Config\+Reader::\+read (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{ini\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+wczytuje plik ini 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ini\+Path} & Ścieżka do pliku ini \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wypełniona struktura \doxylink{struct_app_config}{App\+Config} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & gdy plik nie istnieje lub nie ma pozycji w ini \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Projekt\+\_\+\+POS/\+include/\+\doxymbox{\hyperlink{_config_reader_8h}{Config\+Reader.\+h}}\end{DoxyCompactItemize}

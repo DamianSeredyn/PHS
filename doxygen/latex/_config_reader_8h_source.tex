@@ -1,0 +1,26 @@
+\doxysection{Config\+Reader.\+h}
+\hypertarget{_config_reader_8h_source}{}\label{_config_reader_8h_source}\index{Projekt\_POS/include/ConfigReader.h@{Projekt\_POS/include/ConfigReader.h}}
+\doxymbox{\hyperlink{_config_reader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_app_config}{AppConfig}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_app_config_afbb04804a95cd2d81f9de0ce1c0a11f1}{sourceDir}};\ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \doxymbox{\hyperlink{struct_app_config_a8344126b78b1837087e9645666b9baf3}{destDir}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_app_config_a2993af0286fbbb8ec090e9e6da8fd23c}{numThreads}};\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_app_config_a7265cd0af68e02c500e2504a5b6f7b0c}{thumbnailSize}};\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_app_config_a0e47ab664b5986e7bd16ddb8fc61bb6c}{cannyLow}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{struct_app_config_a3c53a7d325dcad81eae64dbc98e2c740}{cannyHigh}};\ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_config_reader}{ConfigReader}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{struct_app_config}{AppConfig}}\ \doxymbox{\hyperlink{class_config_reader_a08ee96719942b2eaa317c161bcb46dca}{read}}(\textcolor{keyword}{const}\ std::string\&\ iniPath);}
+\DoxyCodeLine{00038\ \};}
+
+\end{DoxyCode}
