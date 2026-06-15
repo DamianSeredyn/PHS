@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <ConfigReader.h>
 
 int main()
 {
