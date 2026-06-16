@@ -39,7 +39,7 @@ std::vector<std::string> ImageProcessor::listImages(const std::string& dirPath) 
 {
     fs::path dir(dirPath);
     if (!fs::exists(dir) || !fs::is_directory(dir))
-        throw std::runtime_error("Folder źródłowy nie istnieje: " + dirPath);
+        throw std::runtime_error("Folder zrodlowy nie istnieje: " + dirPath);
 
     std::vector<std::string> paths;
 
@@ -61,7 +61,7 @@ cv::Mat ImageProcessor::loadImage(const std::string& path) const
     // IMREAD_COLOR 3 kanały BGR
     cv::Mat img = cv::imread(path, cv::IMREAD_COLOR);
     if (img.empty())
-        std::cerr << "[WARN] Nie udało się wczytać: " << path << "\n";
+        std::cerr << "[WARN] Nie udalo się wczytac: " << path << "\n";
     return img;
 }
 
@@ -106,7 +106,7 @@ bool ImageProcessor::processImage(const std::string& srcPath,
 
     if (!cv::imwrite(dstPath, edges))
     {
-        std::cerr << "[WARN] Nie udało się zapisać: " << dstPath << "\n";
+        std::cerr << "[WARN] Nie udalo się zapisac: " << dstPath << "\n";
         return false;
     }
     return true;

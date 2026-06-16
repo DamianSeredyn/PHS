@@ -72,7 +72,7 @@ cv::Mat ThumbnailBuilder::build(const std::vector<std::string>& imagePaths) cons
         cv::Mat img = cv::imread(imagePaths[i], cv::IMREAD_ANYCOLOR);
         if (img.empty())
         {
-            std::cerr << "[WARN] Mozaika: pominięto " << imagePaths[i] << "\n";
+            std::cerr << "[WARN] Mozaika: pominieto " << imagePaths[i] << "\n";
             continue;
         }
 

@@ -57,7 +57,7 @@ int main(int argc, char* argv[])
    
     std::string iniPath = (argc > 1) ? argv[1] : "config.ini"; // sciezka confgu
 
-    std::cout << "=== Wielowątkowy procesor obrazów ===\n";
+    std::cout << " Wielowatkowy procesor obrazow\n";
     std::cout << "Konfiguracja: " << iniPath << "\n\n";
 
     AppConfig cfg;
@@ -67,13 +67,13 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& e)
     {
-        std::cerr << "[BŁĄD] " << e.what() << "\n";
+        std::cerr << "[BLAD] " << e.what() << "\n";
         return 1;
     }
 
-    std::cout << "  Źródło    : " << cfg.sourceDir     << "\n";
+    std::cout << "  Zrodlo    : " << cfg.sourceDir     << "\n";
     std::cout << "  Cel       : " << cfg.destDir       << "\n";
-    std::cout << "  Wątki     : " << cfg.numThreads    << "\n";
+    std::cout << "  Watki     : " << cfg.numThreads    << "\n";
     std::cout << "  Canny     : " << cfg.cannyLow
               << " / "            << cfg.cannyHigh     << "\n";
     std::cout << "  Miniatura : " << cfg.thumbnailSize << "px\n\n";
@@ -86,16 +86,16 @@ int main(int argc, char* argv[])
     }
     catch (const std::exception& e)
     {
-        std::cerr << "[BŁĄD] " << e.what() << "\n";
+        std::cerr << "[BLAD] " << e.what() << "\n";
         return 1;
     }
 
     if (srcPaths.empty())
     {
-        std::cout << "[INFO] Brak plików graficznych w: " << cfg.sourceDir << "\n";
+        std::cout << "[INFO] Brak plikow graficznych w: " << cfg.sourceDir << "\n";
         return 0;
     }
-    std::cout << "Znaleziono " << srcPaths.size() << " plików.\n\n";
+    std::cout << "Znaleziono " << srcPaths.size() << " plikow.\n\n";
 
     // Utwórz folder docelowy jeśli nie istnieje
     fs::create_directories(cfg.destDir);
@@ -132,12 +132,12 @@ int main(int argc, char* argv[])
     auto t1 = std::chrono::steady_clock::now();
     double elapsed = std::chrono::duration<double>(t1 - t0).count();
     std::cout << "\n\nPrzetworzono " << srcPaths.size()
-              << " plików w " << std::fixed << std::setprecision(2)
+              << " plikow w " << std::fixed << std::setprecision(2)
               << elapsed << " s.\n\n";
 
     ThumbnailBuilder tb(cfg.thumbnailSize); // generujemy miniaturki
 
-    std::cout << "Generowanie mozaiki źródłowej...";
+    std::cout << "Generowanie mozaiki zrodłowej...";
     cv::Mat mosaicSrc = tb.build(srcPaths);
     fs::path mosaicSrcPath = fs::path(cfg.destDir) / "_mozaika_zrodlowa.png";
     if (!mosaicSrc.empty())
