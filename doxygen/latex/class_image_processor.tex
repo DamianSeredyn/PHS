@@ -1,0 +1,138 @@
+\doxysection{Image\+Processor Class Reference}
+\hypertarget{class_image_processor}{}\label{class_image_processor}\index{ImageProcessor@{ImageProcessor}}
+
+
+Obsługuje wczytywanie obrazów ze źródła, detekcję konturów algorytmem Canny oraz zapis wyników do folderu docelowego.  
+
+
+
+
+{\ttfamily \+\#include $<$Image\+Processor.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_image_processor_ae9e672cc65535695ce33728cf3725a40}{Image\+Processor}} (int canny\+Low, int canny\+High)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+std::\+vector$<$ std::\+string $>$ \doxymbox{\hyperlink{class_image_processor_a1f4171090412dd1801d6b0a217e1bd4c}{list\+Images}} (const std::\+string \&dir\+Path) const
+\begin{DoxyCompactList}\small\item\em Rekurencyjnie zbiera ścieżki do wszystkich plików graficznych w podanym folderze (png, jpg, jpeg, bmp, tiff, tif). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_image_processor_acda132568648a4c569b79d4d3627de2c}{process\+Image}} (const std::\+string \&src\+Path, const std::\+string \&dst\+Path) const
+\begin{DoxyCompactList}\small\item\em Przetwarza pojedynczy obraz:\+ wczytuje go, stosuje detekcję konturów (Canny) i zapisuje wynik pod wskazaną ścieżką. \end{DoxyCompactList}\item 
+cv::\+\+Mat \doxymbox{\hyperlink{class_image_processor_ab8c4a614e552b024e09c7154d7b5f1af}{load\+Image}} (const std::\+string \&path) const
+\begin{DoxyCompactList}\small\item\em Wczytuje obraz z dysku. \end{DoxyCompactList}\item 
+cv::\+\+Mat \doxymbox{\hyperlink{class_image_processor_a0eb12c3f768fb110cbb68050fd21a8c4}{detect\+Edges}} (const cv::\+\+Mat \&src) const
+\begin{DoxyCompactList}\small\item\em Stosuje algorytm Canny na obrazie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Obsługuje wczytywanie obrazów ze źródła, detekcję konturów algorytmem Canny oraz zapis wyników do folderu docelowego. 
+
+\label{class_image_processor_doc-constructors}
+\Hypertarget{class_image_processor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_processor_ae9e672cc65535695ce33728cf3725a40}\index{ImageProcessor@{ImageProcessor}!ImageProcessor@{ImageProcessor}}
+\index{ImageProcessor@{ImageProcessor}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{ImageProcessor()}{ImageProcessor()}}
+{\footnotesize\ttfamily \label{class_image_processor_ae9e672cc65535695ce33728cf3725a40} 
+Image\+Processor::\+\+Image\+Processor (\begin{DoxyParamCaption}\item[{int}]{canny\+Low}{, }\item[{int}]{canny\+High}{}\end{DoxyParamCaption})}
+
+
+
+Konstruktor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em canny\+Low} & Dolny próg histerezy algorytmu Canny. \\
+\hline
+{\em canny\+High} & Górny próg histerezy algorytmu Canny. \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_image_processor_doc-func-members}
+\Hypertarget{class_image_processor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_processor_a0eb12c3f768fb110cbb68050fd21a8c4}\index{ImageProcessor@{ImageProcessor}!detectEdges@{detectEdges}}
+\index{detectEdges@{detectEdges}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{detectEdges()}{detectEdges()}}
+{\footnotesize\ttfamily \label{class_image_processor_a0eb12c3f768fb110cbb68050fd21a8c4} 
+cv::\+\+Mat Image\+Processor::\+detect\+Edges (\begin{DoxyParamCaption}\item[{const cv::\+\+Mat \&}]{src}{}\end{DoxyParamCaption}) const}
+
+
+
+Stosuje algorytm Canny na obrazie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Obraz wejściowy (dowolna liczba kanałów). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Jednokanałowy obraz krawędzi (CV\+\_\+8U). 
+\end{DoxyReturn}
+\Hypertarget{class_image_processor_a1f4171090412dd1801d6b0a217e1bd4c}\index{ImageProcessor@{ImageProcessor}!listImages@{listImages}}
+\index{listImages@{listImages}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{listImages()}{listImages()}}
+{\footnotesize\ttfamily \label{class_image_processor_a1f4171090412dd1801d6b0a217e1bd4c} 
+std::\+vector$<$ std::\+string $>$ Image\+Processor::\+list\+Images (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{dir\+Path}{}\end{DoxyParamCaption}) const}
+
+
+
+Rekurencyjnie zbiera ścieżki do wszystkich plików graficznych w podanym folderze (png, jpg, jpeg, bmp, tiff, tif). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+Path} & Ścieżka do przeszukiwanego folderu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Wektor bezwzględnych ścieżek do plików. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & gdy folder nie istnieje. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_image_processor_ab8c4a614e552b024e09c7154d7b5f1af}\index{ImageProcessor@{ImageProcessor}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}}
+{\footnotesize\ttfamily \label{class_image_processor_ab8c4a614e552b024e09c7154d7b5f1af} 
+cv::\+\+Mat Image\+Processor::\+load\+Image (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{path}{}\end{DoxyParamCaption}) const}
+
+
+
+Wczytuje obraz z dysku. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Ścieżka do pliku. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obiekt cv::\+\+Mat; pusty jeśli wczytanie się nie powiodło. 
+\end{DoxyReturn}
+\Hypertarget{class_image_processor_acda132568648a4c569b79d4d3627de2c}\index{ImageProcessor@{ImageProcessor}!processImage@{processImage}}
+\index{processImage@{processImage}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{processImage()}{processImage()}}
+{\footnotesize\ttfamily \label{class_image_processor_acda132568648a4c569b79d4d3627de2c} 
+bool Image\+Processor::\+process\+Image (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{src\+Path}{, }\item[{const std::\+string \&}]{dst\+Path}{}\end{DoxyParamCaption}) const}
+
+
+
+Przetwarza pojedynczy obraz:\+ wczytuje go, stosuje detekcję konturów (Canny) i zapisuje wynik pod wskazaną ścieżką. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src\+Path} & Ścieżka do pliku wejściowego. \\
+\hline
+{\em dst\+Path} & Ścieżka zapisu przetworzonego obrazu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} przy sukcesie, {\ttfamily false} przy błędzie I/\+O lub dekodowania. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Projekt\+\_\+\+POS/\+include/\+\doxymbox{\hyperlink{_image_processor_8h}{Image\+Processor.\+h}}\end{DoxyCompactItemize}

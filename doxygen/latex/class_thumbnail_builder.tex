@@ -1,0 +1,82 @@
+\doxysection{Thumbnail\+Builder Class Reference}
+\hypertarget{class_thumbnail_builder}{}\label{class_thumbnail_builder}\index{ThumbnailBuilder@{ThumbnailBuilder}}
+
+
+Scala listę obrazów w siatkę miniatur (mozaikę).  
+
+
+
+
+{\ttfamily \+\#include $<$Thumbnail\+Builder.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8}{Thumbnail\+Builder}} (int tile\+Size, int cols=0)
+\begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
+cv::\+\+Mat \doxymbox{\hyperlink{class_thumbnail_builder_a07e87fd100e67b785e53ab862a903620}{build}} (const std::\+vector$<$ std::\+string $>$ \&image\+Paths) const
+\begin{DoxyCompactList}\small\item\em Buduje mozaikę miniatur ze ścieżek do plików. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Scala listę obrazów w siatkę miniatur (mozaikę). 
+
+Miniatury mają zachowane proporcje wysokość/\+szerokość. Brakujące komórki siatki wypełniane są czernią.
+
+Przykład użycia:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8}{ThumbnailBuilder}}\ tb(128,\ 4);}
+\DoxyCodeLine{cv::Mat\ mosaic\ =\ tb.build(imagePaths);}
+\DoxyCodeLine{cv::imwrite(\textcolor{stringliteral}{"{}mosaic.png"{}},\ mosaic);}
+
+\end{DoxyCode}
+ 
+
+\label{class_thumbnail_builder_doc-constructors}
+\Hypertarget{class_thumbnail_builder_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8}\index{ThumbnailBuilder@{ThumbnailBuilder}!ThumbnailBuilder@{ThumbnailBuilder}}
+\index{ThumbnailBuilder@{ThumbnailBuilder}!ThumbnailBuilder@{ThumbnailBuilder}}
+\doxysubsubsection{\texorpdfstring{ThumbnailBuilder()}{ThumbnailBuilder()}}
+{\footnotesize\ttfamily \label{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8} 
+Thumbnail\+Builder::\+\+Thumbnail\+Builder (\begin{DoxyParamCaption}\item[{int}]{tile\+Size}{, }\item[{int}]{cols}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Konstruktor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Size} & Rozmiar boku pojedynczej komórki siatki \+[px]\+. \\
+\hline
+{\em cols} & Liczba kolumn siatki (0 = automatycznie:\+ sqrt(n)). \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_thumbnail_builder_doc-func-members}
+\Hypertarget{class_thumbnail_builder_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_thumbnail_builder_a07e87fd100e67b785e53ab862a903620}\index{ThumbnailBuilder@{ThumbnailBuilder}!build@{build}}
+\index{build@{build}!ThumbnailBuilder@{ThumbnailBuilder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \label{class_thumbnail_builder_a07e87fd100e67b785e53ab862a903620} 
+cv::\+\+Mat Thumbnail\+Builder::\+build (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ std::\+string $>$ \&}]{image\+Paths}{}\end{DoxyParamCaption}) const}
+
+
+
+Buduje mozaikę miniatur ze ścieżek do plików. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Paths} & Lista ścieżek do obrazów źródłowych lub wynikowych. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Obraz mozaiki (CV\+\_\+8\+UC3). Pusty przy pustej liście. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Projekt\+\_\+\+POS/\+include/\+\doxymbox{\hyperlink{_thumbnail_builder_8h}{Thumbnail\+Builder.\+h}}\end{DoxyCompactItemize}

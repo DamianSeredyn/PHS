@@ -1,0 +1,4 @@
+﻿  Projekt_POS.cpp
+  ConfigReader.cpp
+C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS.cpp(5,10): error C1083: Cannot open include file: 'ConfigReader.h': No such file or directory
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\ConfigReader.cpp(1,10): error C1083: Cannot open include file: 'ConfigReader.h': No such file or directory

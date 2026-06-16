@@ -145,7 +145,20 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Projekt_POS.cpp" />
+    <ClCompile Include="src\ConfigReader.cpp" />
+    <ClCompile Include="src\ImageProcessor.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ThreadPool.cpp" />
+    <ClCompile Include="src\ThumbnailBuilder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\config.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\ConfigReader.h" />
+    <ClInclude Include="include\ImageProcessor.h" />
+    <ClInclude Include="include\ThreadPool.h" />
+    <ClInclude Include="include\ThumbnailBuilder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,25 @@
+\doxysection{Projekt\+\_\+\+POS/\+include/\+\+Thread\+Pool.h File Reference}
+\hypertarget{_thread_pool_8h}{}\label{_thread_pool_8h}\index{Projekt\_POS/include/ThreadPool.h@{Projekt\_POS/include/ThreadPool.h}}
+
+
+Prosta pula wątków oparta o std::\+thread i kolejkę zadań.  
+
+
+{\ttfamily \+\#include $<$functional$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$queue$>$}\newline
+{\ttfamily \+\#include $<$thread$>$}\newline
+{\ttfamily \+\#include $<$mutex$>$}\newline
+{\ttfamily \+\#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \+\#include $<$atomic$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_thread_pool}{Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em Pula wątków producent–konsument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prosta pula wątków oparta o std::\+thread i kolejkę zadań. 
+
+Implementacja korzysta wyłącznie ze standardowej biblioteki C++11, bez zależności od Win\+API (przez co kompiluje się również na Linux/\+mac\+OS). Dla wymagania "{}\+Windows Threads"{} prowadzącego wystarczy podmienić std::\+thread na HANDLE + Create\+Thread — interfejs klasy pozostaje bez zmian. 

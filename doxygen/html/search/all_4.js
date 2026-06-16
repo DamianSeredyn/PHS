@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['read_0',['read',['../class_config_reader.html#a08ee96719942b2eaa317c161bcb46dca',1,'ConfigReader']]]
+  ['imageprocessor_0',['ImageProcessor',['../class_image_processor.html',1,'ImageProcessor'],['../class_image_processor.html#ae9e672cc65535695ce33728cf3725a40',1,'ImageProcessor::ImageProcessor()']]],
+  ['imageprocessor_2eh_1',['ImageProcessor.h',['../_image_processor_8h.html',1,'']]]
 ];

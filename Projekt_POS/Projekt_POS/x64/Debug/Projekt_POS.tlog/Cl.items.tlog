@@ -1,1 +1,5 @@
-C:\Users\Pc\source\repos\Projekt_POS\Projekt_POS.cpp;C:\Users\Pc\source\repos\Projekt_POS\Projekt_POS\x64\Debug\Projekt_POS.obj
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\ConfigReader.cpp;C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS\x64\Debug\ConfigReader.obj
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\ImageProcessor.cpp;C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS\x64\Debug\ImageProcessor.obj
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\main.cpp;C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS\x64\Debug\main.obj
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\ThreadPool.cpp;C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS\x64\Debug\ThreadPool.obj
+C:\Users\Pc\source\repos\PHS\Projekt_POS\src\ThumbnailBuilder.cpp;C:\Users\Pc\source\repos\PHS\Projekt_POS\Projekt_POS\x64\Debug\ThumbnailBuilder.obj

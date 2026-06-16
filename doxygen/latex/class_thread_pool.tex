@@ -1,0 +1,90 @@
+\doxysection{Thread\+Pool Class Reference}
+\hypertarget{class_thread_pool}{}\label{class_thread_pool}\index{ThreadPool@{ThreadPool}}
+
+
+Pula wątków producent–konsument.  
+
+
+
+
+{\ttfamily \+\#include $<$Thread\+Pool.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{Thread\+Pool}} (int num\+Threads)
+\begin{DoxyCompactList}\small\item\em Tworzy pulę z podaną liczbą wątków i uruchamia je. \end{DoxyCompactList}\item 
+\Hypertarget{class_thread_pool_a44d3d2ab618970605e684efc216655eb}\label{class_thread_pool_a44d3d2ab618970605e684efc216655eb} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Thread\+Pool} ()
+\begin{DoxyCompactList}\small\item\em Destruktor — czeka na zakończenie wszystkich wątków. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_thread_pool_a9b68013ffae3ddbc11d1fbaf934dacdd}{submit}} (std::\+function$<$ void()$>$ task)
+\begin{DoxyCompactList}\small\item\em Dodaje zadanie do kolejki. \end{DoxyCompactList}\item 
+\Hypertarget{class_thread_pool_a2f25f5182d33e3052b4025323240f5aa}\label{class_thread_pool_a2f25f5182d33e3052b4025323240f5aa} 
+void {\bfseries wait\+All} ()
+\begin{DoxyCompactList}\small\item\em Blokuje wątek wywołujący do czasu opróżnienia kolejki i zakończenia wszystkich aktywnych zadań. \end{DoxyCompactList}\item 
+\Hypertarget{class_thread_pool_a8af7ebd9779dcab6e0a48f80e8962d08}\label{class_thread_pool_a8af7ebd9779dcab6e0a48f80e8962d08} 
+{\bfseries Thread\+Pool} (const \doxymbox{\hyperlink{class_thread_pool}{Thread\+Pool}} \&)=delete
+\item 
+\Hypertarget{class_thread_pool_afec5f97d2b512da75aa10897ef12a2a8}\label{class_thread_pool_afec5f97d2b512da75aa10897ef12a2a8} 
+\doxymbox{\hyperlink{class_thread_pool}{Thread\+Pool}} \& {\bfseries operator=} (const \doxymbox{\hyperlink{class_thread_pool}{Thread\+Pool}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pula wątków producent–konsument. 
+
+Zadania (std::\+function$<$void()$>$) są kolejkowane i wykonywane przez stałą liczbę wątków roboczych. Destruktor czeka na opróżnienie kolejki.
+
+Przykład użycia:\+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}\ pool(4);}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ path\ :\ paths)}
+\DoxyCodeLine{\ \ \ \ pool.submit([\&]\{\ processor.processImage(path,\ dst);\ \});}
+\DoxyCodeLine{pool.waitAll();}
+
+\end{DoxyCode}
+ 
+
+\label{class_thread_pool_doc-constructors}
+\Hypertarget{class_thread_pool_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily \label{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff} 
+Thread\+Pool::\+\+Thread\+Pool (\begin{DoxyParamCaption}\item[{int}]{num\+Threads}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Tworzy pulę z podaną liczbą wątków i uruchamia je. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Threads} & Liczba wątków roboczych (≥ 1). \\
+\hline
+\end{DoxyParams}
+
+
+\label{class_thread_pool_doc-func-members}
+\Hypertarget{class_thread_pool_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_thread_pool_a9b68013ffae3ddbc11d1fbaf934dacdd}\index{ThreadPool@{ThreadPool}!submit@{submit}}
+\index{submit@{submit}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{submit()}{submit()}}
+{\footnotesize\ttfamily \label{class_thread_pool_a9b68013ffae3ddbc11d1fbaf934dacdd} 
+void Thread\+Pool::\+submit (\begin{DoxyParamCaption}\item[{std::\+function$<$ void()$>$}]{task}{}\end{DoxyParamCaption})}
+
+
+
+Dodaje zadanie do kolejki. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em task} & Callable bez argumentów i wartości zwracanej. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\+\begin{DoxyCompactItemize}
+\item 
+Projekt\+\_\+\+POS/\+include/\+\doxymbox{\hyperlink{_thread_pool_8h}{Thread\+Pool.\+h}}\end{DoxyCompactItemize}

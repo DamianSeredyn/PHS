@@ -1,0 +1,26 @@
+\doxysection{Thumbnail\+Builder.\+h}
+\hypertarget{_thumbnail_builder_8h_source}{}\label{_thumbnail_builder_8h_source}\index{Projekt\_POS/include/ThumbnailBuilder.h@{Projekt\_POS/include/ThumbnailBuilder.h}}
+\doxymbox{\hyperlink{_thumbnail_builder_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <opencv2/core.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8}{ThumbnailBuilder}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_thumbnail_builder_a229c758b3cdbbf0e62484fa16ce8eec8}{ThumbnailBuilder}}(\textcolor{keywordtype}{int}\ tileSize,\ \textcolor{keywordtype}{int}\ cols\ =\ 0);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ cv::Mat\ \doxymbox{\hyperlink{class_thumbnail_builder_a07e87fd100e67b785e53ab862a903620}{build}}(\textcolor{keyword}{const}\ std::vector<std::string>\&\ imagePaths)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_tileSize;\ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_cols;\ \ \ \ \ \ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ cv::Mat\ makeTile(\textcolor{keyword}{const}\ cv::Mat\&\ img)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \};}
+
+\end{DoxyCode}

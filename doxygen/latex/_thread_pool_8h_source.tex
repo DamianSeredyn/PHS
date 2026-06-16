@@ -1,0 +1,43 @@
+\doxysection{Thread\+Pool.\+h}
+\hypertarget{_thread_pool_8h_source}{}\label{_thread_pool_8h_source}\index{Projekt\_POS/include/ThreadPool.h@{Projekt\_POS/include/ThreadPool.h}}
+\doxymbox{\hyperlink{_thread_pool_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <condition\_variable>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}(\textcolor{keywordtype}{int}\ numThreads);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \doxymbox{\hyperlink{class_thread_pool_a44d3d2ab618970605e684efc216655eb}{\string~ThreadPool}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_thread_pool_a9b68013ffae3ddbc11d1fbaf934dacdd}{submit}}(std::function<\textcolor{keywordtype}{void}()>\ task);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_thread_pool_a2f25f5182d33e3052b4025323240f5aa}{waitAll}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ Brak\ kopiowania\ —\ pula\ jest\ właścicielem\ wątków}}
+\DoxyCodeLine{00063\ \ \ \ \ \doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}\&)\ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00064\ \ \ \ \ \doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}\&\ operator=(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_thread_pool_a3e0ddf4638e66015010fd3e0cdeed3ff}{ThreadPool}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ workerLoop();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ std::vector<std::thread>\ \ \ \ \ \ \ \ \ \ m\_workers;\ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ std::queue<std::function<void()>>\ m\_queue;\ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ std::mutex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_mutex;\ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ std::condition\_variable\ \ \ \ \ \ \ \ \ \ \ m\_cv;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ std::condition\_variable\ \ \ \ \ \ \ \ \ \ \ m\_cvDone;\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ std::atomic<int>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_active\{0\};\ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_stop\{\textcolor{keyword}{false}\};}
+\DoxyCodeLine{00077\ \};}
+
+\end{DoxyCode}

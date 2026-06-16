@@ -27,6 +27,7 @@
 #include "ImageProcessor.h"
 #include "ThumbnailBuilder.h"
 #include "ThreadPool.h"
+#include <opencv2/imgcodecs.hpp>
 
 namespace fs = std::filesystem;
 

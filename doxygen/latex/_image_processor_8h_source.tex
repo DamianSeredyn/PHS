@@ -1,0 +1,30 @@
+\doxysection{Image\+Processor.\+h}
+\hypertarget{_image_processor_8h_source}{}\label{_image_processor_8h_source}\index{Projekt\_POS/include/ImageProcessor.h@{Projekt\_POS/include/ImageProcessor.h}}
+\doxymbox{\hyperlink{_image_processor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <opencv2/core.hpp>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_image_processor_ae9e672cc65535695ce33728cf3725a40}{ImageProcessor}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{class_image_processor_ae9e672cc65535695ce33728cf3725a40}{ImageProcessor}}(\textcolor{keywordtype}{int}\ cannyLow,\ \textcolor{keywordtype}{int}\ cannyHigh);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<std::string>\ \doxymbox{\hyperlink{class_image_processor_a1f4171090412dd1801d6b0a217e1bd4c}{listImages}}(\textcolor{keyword}{const}\ std::string\&\ dirPath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_image_processor_acda132568648a4c569b79d4d3627de2c}{processImage}}(\textcolor{keyword}{const}\ std::string\&\ srcPath,\ \textcolor{keyword}{const}\ std::string\&\ dstPath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ cv::Mat\ \doxymbox{\hyperlink{class_image_processor_ab8c4a614e552b024e09c7154d7b5f1af}{loadImage}}(\textcolor{keyword}{const}\ std::string\&\ path)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ cv::Mat\ \doxymbox{\hyperlink{class_image_processor_a0eb12c3f768fb110cbb68050fd21a8c4}{detectEdges}}(\textcolor{keyword}{const}\ cv::Mat\&\ src)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_cannyLow;\ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_cannyHigh;\ \ }
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}
